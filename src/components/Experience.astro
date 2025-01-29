@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Estudiante de Ingenieria de sistemas - Universidad Minuto de Dios",
+    description: "Estudiante de ingenieria de sistemas en la Universidad Minuto de Dios, con enfoque en desarrollo de software, aplicaciones web e inteligencia artificial."
+  },
+  {
+    date: "Enero 2015 - Diciembre 2019",
+    title: "Bachiller Tecnico en Sistemas - ETITC",
+    description: "Bachiller Tecnico en sistemas con enfasis en programacion y desarrollo de software. Desarrollando habilidades en lenguajes de programacion como Java, C++, HTML, CSS, JavaScript y SQL."
+  }
+]
+---
+<ol class="relative border-s border-yellow-500 dark:border-yellow-200 mx-auto max-w-2xl px-4">
+  {
+    EXPERIENCE.map(experience => (
+      <li class="mb-12 ms-4 md:ms-6">
+        <ExperienceItem {...experience}/>
+      </li>
+    ))
+  }
+</ol>
+

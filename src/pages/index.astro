@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import SocialPill from "../icons/SocialPill.astro";
+import MailIcon from "../icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import { Image } from "astro:assets";
+import yo from "../images/yo.jpg";
+import BriefCase from "../icons/BriefCase.astro";
+import CodeIcon from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
+
+import AboutMe from "../components/AboutMe.astro";
+---
+
+<Layout
+  title="Portfolio de Andres Moreno - Desarrollador Web y Estudiante de Ingenieria de sistemas"
+  description="Contrata a Andres Moreno, Desarrollador Web y Estudiante de Ingenieria de sistemas para tu próximo proyecto."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <div>
+        <div class="flex items-center gap-4 mb-4">
+          <Image class="rounded-full size-16" src={yo} alt="andres photo" />
+          <a
+            href="https://www.linkedin.com/in/andres-felipe-moreno-09b5152a5/"
+            target="_blank"
+            class="inline-block min-w-[160px]"
+          >
+            <Badge
+              class="text-white text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400 w-full text-center"
+            >
+              Disponible para trabajar
+            </Badge>
+          </a>
+        </div>
+
+        <h1
+          class="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-6 lg:pb-10"
+        >
+          Hola! soy Andrés
+        </h1>
+        <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+          <span>Estudiante de ingeniería de sistemas.</span><span
+            class="text-yellow-500"
+          >
+            <strong>Desarrollador Web</strong>
+          </span>
+          <span class="opacity-75">
+            enfocado en crear sitios modernos, funcionales y fáciles de usar. Mi
+            objetivo es transformar tus ideas en experiencias digitales
+            efectivas y accesibles.</span
+          >
+        </h2>
+      </div>
+      <nav class="flex flex-wrap items-center gap-4 mt-8">
+        <SocialPill href="https://linkedin.com/in/...">
+          <LinkedInIcon class="size-4 md:size-6" />LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/AndresMorenoS">
+          <GitHubIcon class="size-4 md:size-6" />GitHub
+        </SocialPill>
+        <SocialPill href="mailto:afmoreno22@outlook.com">
+          <MailIcon class="size-4 md:size-6" />afmoreno22@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 pb-8 flex gap-x-2 items-center">
+        <BriefCase class="size-7" />
+        Experiencia
+      </h2>
+      <Experience />
+    </SectionContainer>
+    
+        <SectionContainer id="proyectos">
+          <h2 class="text-3xl font-semibold mb-6 pb-8 flex gap-x-2 items-center">
+            <CodeIcon class="size-7" />
+            Proyectos
+          </h2>
+          <Projects />
+        </SectionContainer>
+    
+        <SectionContainer id="sobre-mi">
+          <AboutMe />
+        </SectionContainer>
+      </main>
+    </Layout>

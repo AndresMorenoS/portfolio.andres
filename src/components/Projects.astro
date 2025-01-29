@@ -1,0 +1,93 @@
+---
+import CSSIcon from '../icons/CSSIcon.astro'
+import HTMLIcon from '../icons/HTMLIcon.astro'
+import JavaScriptIcon from '../icons/JSIcon.astro'
+import TailwindIcon from '../icons/TailwindIcon.astro'
+import SocialPill from "../icons/SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+const TAGS = {
+  CSS: {
+    name: 'CSS',
+    class: 'bg-[#003159] text-white',
+    icon: CSSIcon
+  },
+  HTML: {
+    name: 'HMTL',
+    class: 'bg-[#E34F26] text-white',
+    icon: HTMLIcon
+  },
+  JAVASCRIPT: {
+    name: 'JAVASCRIPT',
+    class: 'bg-black text-white',
+    icon: JavaScriptIcon
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon:  TailwindIcon
+  },
+}
+
+const PROJECTS = [
+  {
+    title: "Template project",
+    description: "This is a template project, this is not from my authority, its just a way to style the projects",
+    link: 'https://tureng.com/es/espanol-ingles/hey',
+    github: 'https://github.com/yourusername/project',
+    image: '/projects/template_web.webp',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND]
+  }
+]
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags, github, link }) => (
+    <article class="mb-8">
+      <img
+        class="rounded-xl shadow-xl mb-4"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
+      
+      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+        {title}
+      </h3>
+
+      <ul class="flex gap-x-2 flex-row mb-4">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+
+      <footer class="flex gap-x-4 items-center">
+        <SocialPill href={github}>
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        
+        <SocialPill href={link}>
+          <svg 
+            class="size-4 md:size-6"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+          </svg>
+          Preview
+        </SocialPill>
+      </footer>
+    </article>
+  ))
+}

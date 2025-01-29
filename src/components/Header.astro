@@ -1,0 +1,52 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<header class="fixed top-0 z-50 w-full px-4 py-2">
+  <div class="mx-auto max-w-xl">
+    <nav
+      class="flex items-center justify-center gap-x-3 rounded-full px-3 py-1
+      text-sm font-medium
+      backdrop-blur-sm
+      border border-gray-200 dark:border-gray-800
+      bg-white/50 dark:bg-gray-800/50"
+    >
+      <ThemeIcon />
+      <a
+        class="hover:text-yellow-500 dark:hover:text-yellow-200 transition"
+        href="#top">Inicio</a
+      >
+      <a
+        class="hover:text-yellow-500 dark:hover:text-yellow-200 transition"
+        href="#experiencia">Experiencia</a
+      >
+      
+      <a
+        class="hover:text-yellow-500 dark:hover:text-yellow-200 transition"
+        href="#proyectos">Proyectos</a
+      >
+      <a
+        class="hover:text-yellow-500 dark:hover:text-yellow-200 transition"
+        href="#sobre-mi">Sobre mi</a
+      >
+      <a
+        class="hover:text-yellow-500 dark:hover:text-yellow-200 transition"
+        href="mailto:afmoreno22@outlook.com">Contacto</a
+      >
+    </nav>
+  </div>
+
+  <style>
+    nav {
+      animation: nav-shadown 1s linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+
+    @keyframes nav-shadown {
+      to {
+        @apply shadow-lg ring-1 ring-gray-200 dark:ring-gray-800;
+      }
+    }
+  </style>
+</header>

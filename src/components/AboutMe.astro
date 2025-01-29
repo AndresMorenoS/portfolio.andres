@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import sobreMiFoto from "../images/SobreMi.jpg";
+---
+
+<article>
+  <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center" id="SobreMi">
+    <svg
+      class="size-7"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+      <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+    </svg>
+    Sobre mí
+  </h2>
+
+  <div class="flex flex-col md:flex-row gap-8 justify-between items-center">
+    <div class="space-y-4 text-pretty">
+      <p class="text-lg text-gray-800 dark:text-gray-300">
+        ¡Hola! 👋 Soy Andrés Moreno, <strong class="text-yellow-400">estudiante de Ingeniería de Sistemas en UNIMINUTO</strong> y apasionado por el desarrollo web y la ciencia de datos.
+      </p>
+    
+      <p class="text-lg text-gray-800 dark:text-gray-300">
+        Desde mis inicios en la ETITC como bachiller técnico en sistemas, he adquirido experiencia en:
+      </p>
+    
+      <ul class="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-300">
+        <li><span class="text-yellow-600">Desarrollo web</span> con HTML, CSS y JavaScript</li>
+        <li>Frameworks y herramientas modernas como <span class="text-yellow-500">React, Astro y TailwindCSS</span></li>
+        <li>Automatización y procesamiento de datos con <span class="text-yellow-500">Python</span></li>
+        <li>Consumo de <span class="text-yellow-500">APIs REST</span> y gestión de bases de datos relacionales (SQL, SQLite, MySQL)</li>
+      </ul>
+    
+      <p class="text-lg text-gray-800 dark:text-gray-300">
+        Actualmente, estoy realizando una <strong class="text-yellow-400">especialización como desarrollador backend con Oracle Next Education</strong>.
+      </p>
+    </div>
+
+    <Image
+      src={sobreMiFoto}
+      alt="Andres Moreno foto"
+      class="order-1 md:order-2 size-64 object-cover rounded-2xl rotate-12 shadow-2xl"
+      width={256}
+      height={256}
+    />
+  </div>
+</article>
